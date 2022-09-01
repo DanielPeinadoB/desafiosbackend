@@ -25,6 +25,8 @@ app.get("/productoRandom", async (req, res) => {
 })
 
 
-app.listen(8080, () => {
-    console.log("Iniciado");
-  });  
+const server = app.listen(8080, () => {
+    console.log("Servidor de express iniciado")
+})
+
+server.on('error', error => console.log(`Error en servidor ${error}`))
